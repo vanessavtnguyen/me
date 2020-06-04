@@ -1,0 +1,34 @@
+{
+    "architecture": [
+        "64bit",
+        ""
+    ],
+    "machine": "x86_64",
+    "os_name": "posix",
+    "platform": "Darwin-19.3.0-x86_64-i386-64bit",
+    "processor": "i386",
+    "release": "19.3.0",
+    "system": "Darwin",
+    "uname": [
+        "Darwin",
+        "192-168-1-110.tpgi.com.au",
+        "19.3.0",
+        "Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64",
+        "x86_64",
+        "i386"
+    ],
+    "version": "Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64",
+    "python_build": [
+        "default",
+        "Sep  5 2019 17:14:41"
+    ],
+    "python_compiler": "Clang 11.0.0 (clang-1100.0.33.8)",
+    "python_implementation(": "CPython",
+    "python_version(": "3.7.3",
+    "python_version_tuple": [
+        "3",
+        "7",
+        "3"
+    ],
+    "cpu_count": 4
+}
