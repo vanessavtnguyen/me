@@ -7,4 +7,4 @@ TODO: Reflect on what you learned this week and what is still unclear.
 - The use of **tab** auto completes words 
 - **../** means to *go up 1*
 - to test run results **python ../course/week(insert number)/tests.py**
-- Remember to always **save and commit**
+- Remember to always **save and commit** and **push** 
