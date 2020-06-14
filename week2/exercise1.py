@@ -38,8 +38,8 @@ def usefulFunction():
     what the line below does:
     https://docs.python.org/3/library/platform.html#platform.uname
     """
-    #
+    # I think it will print 
     print(platform.uname())
 
-#
+# I think it will 
 usefulFunction()

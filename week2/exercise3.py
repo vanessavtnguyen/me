@@ -7,7 +7,8 @@ def is_odd(a_number):
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
-    return bool(a_number % 2)
+    the_answer = bool(a_number % 2)
+    return the_answer
 
 
 
@@ -26,16 +27,16 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements. 
     As an extra challenge, see if you can get that down to three.
     """
-
-    return if False and False:
-        print(Wd-40)
-    elif True and False:
-        print(Duct Tape)
+    if (moves == True):
+        if (should_move == True):
+            return "No Problem"
+        else: 
+            return "Duct Tape"
     else: 
-        print(No Problem)
-    
-
-
+        if (should_move == True):
+            return "WD-40"
+        else:
+            return "No Problem"
 
 def loops_1a():
     """Make 10 stars.
@@ -44,8 +45,10 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    return None
-
+    stars = []
+    for x in range(10):
+        stars.append("*")
+    return stars
 
 def loops_1c(number_of_items=5, symbol="#"):
     """Respond to variables.
@@ -54,7 +57,10 @@ def loops_1c(number_of_items=5, symbol="#"):
     string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    return None
+    random_list = []
+    for i in range(number_of_items):
+        random_list.append(symbol)
+    return random_list
 
 
 def loops_2():
@@ -75,8 +81,13 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
-
+    starfield = []
+    for i in range(10):
+        stars = []
+        for j in range(10):
+            stars.append("*")
+        starfield.append(stars)
+    return starfield
 
 def loops_3():
     """Make a rising block of numbers.
@@ -99,8 +110,13 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
-
+    numberfield = []
+    for x in range(10):
+        numbers = []
+        for y in range(10):
+            numbers.append(str(x))
+        numberfield.append(numbers)
+    return numberfield
 
 def loops_4():
     """Make a block of numbers that rises left to right.
@@ -119,8 +135,13 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
-
+    number_field = []
+    for x in range(10):
+        row = []
+        for y in range(10):
+            row.append(y)
+        number_field.append(row)
+    return number_field
 
 def loops_5():
     """Make the coordinates of the block.
@@ -146,7 +167,13 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    return None
+    coordinates = []
+    for x in range(10):
+        across = []
+        for y in range(5):
+            across.append("(i{}, j{})".format(x , y))
+        coordinates.append(across)        
+    return coordinates
 
 
 def loops_6():
@@ -169,8 +196,14 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
-
+    wedge = []
+    for i in range(10):
+        across = []
+        for j in range(i + 1):
+            across.append(j)
+        wedge.append(across)
+    print(wedge)
+    return wedge
 
 def loops_7():
     """Make a pyramid.
@@ -193,7 +226,19 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+
+    pyramid = []
+    for i in range(0, 5):
+        row = []
+        for j in range(0, 5-i-1):
+            row.append(" ")
+        for j in range(0,2*i+1):
+            row.append("*")
+        for j in range(0, 5-i-1):
+            row.append(" ")
+        pyramid.append(row)
+    return pyramid
+
 
 
 def lp(some_kind_of_list, exercise_name):
