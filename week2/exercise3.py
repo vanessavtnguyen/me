@@ -202,7 +202,6 @@ def loops_6():
         for j in range(i + 1):
             across.append(j)
         wedge.append(across)
-    print(wedge)
     return wedge
 
 def loops_7():
