@@ -139,7 +139,7 @@ def loops_4():
     for x in range(10):
         row = []
         for y in range(10):
-            row.append(y)
+            row.append(str(y))
         number_field.append(row)
     return number_field
 
@@ -200,7 +200,7 @@ def loops_6():
     for i in range(10):
         across = []
         for j in range(i + 1):
-            across.append(j)
+            across.append(str(j))
         wedge.append(across)
     return wedge
 
