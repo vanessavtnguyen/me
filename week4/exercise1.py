@@ -36,8 +36,20 @@ def get_some_details():
     json_data = open(LOCAL + "/lazyduck.json").read()
 
     data = json.loads(json_data)
-    return {"lastName": None, "password": None, "postcodePlusID": None}
-
+    him = data["results"][0]
+    return {
+        "lastName": him["name"]["last"], 
+        "password": him["login"]["password"], 
+        "postcodePlusID": him["location"]["postcode"] + int(data["results"][0]["id"]["value"])
+        }
+        
+def randomString(length=8):
+    url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={stringLength}"
+    url = url.format(stringLength=length)
+    r = requests.get(url)
+    if r.status_code is 200:
+        random_word = r.content
+    return random_word
 
 def wordy_pyramid():
     """Make a pyramid out of real words.
@@ -74,7 +86,26 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
-    pass
+    word = []
+    row = 1
+    number = 3
+    end = 18
+
+    while row <= end:
+        if row < 9:
+            word.append(randomString(int(number)))
+            number = number + 2
+            row = row + 1
+        elif row == 9:
+            word.append(randomString(int(number)))
+            number = number + 1
+            row = row + 1
+        elif row > 9:
+            word.append(randomString(int(number)))
+            number = number - 2
+            row = row + 1
+            
+    return word
 
 
 def pokedex(low=1, high=5):
@@ -92,12 +123,29 @@ def pokedex(low=1, high=5):
          variable and then future access will be easier.
     """
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
+    the_json = None
 
-    url = template.format(id=5)
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
-    return {"name": None, "weight": None, "height": None}
+    height = -1
+    weight = -1
+    name = ""
+
+
+    while low < high:
+        url = template.format(id=low)
+        r = requests.get(url)
+
+        if r.status_code == 200:
+            the_json = json.loads(r.text)
+            
+        if the_json != None and the_json["height"] > height:
+
+                height = the_json["height"] 
+                weight = the_json["weight"]
+                name = the_json["name"]
+        low = low + 1
+
+
+    return {"name": name, "weight": weight, "height": height}
 
 
 def diarist():
