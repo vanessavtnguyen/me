@@ -162,6 +162,16 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
+    
+    data = open(LOCAL + "/Trispokedovetiles(laser).gcode").read()
+    Laser_number = data.count("M10 P1")
+    
+    #Write it to file
+    mode = "w"  # from the docs
+    laser = open("/lasers.pew", mode)
+    laser.write(str(Laser_number))
+    laser.close()
+
     pass
 
 
