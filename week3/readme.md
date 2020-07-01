@@ -1,18 +1,13 @@
 TODO: Reflect on what you learned this week and what is still unclear.
-## Lecture Notes
 # Review
 - In coding counting begins from 0
 - When choosing a certain dictionary type the script in ""
-# Algorithms
-- 
-
-## Algorithms 
 
 # Binary Search: 
-- 
+- Binary search look through an algorithm to find the target value
 
-## Diagram for Exercise 2: 
-
+## Understanding the code in Exercise 2: 
+- guess = false as assigning anything to false ensures that in a while loop it is not executed and what is 'true' is only executed
 
 ## New Content Learnt
 - __while True__: The while loop will run as long as the conditional expression evaluates to True.

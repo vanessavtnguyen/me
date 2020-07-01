@@ -26,7 +26,10 @@ means if the first condition does not occur test for second condition
 - For the conditions it took more thinking to understand how each command works but was doable
 ## Looping 
 - For () in (): 
-- 
+- != : does not equal 
+- >= : more than/equal to 
+- <= : less than/equal to 
+- == : equals to 
 ### Reflection on Looping 
 - __Loop 1a and 1c__ I had the most trouble with the looping section. I was able to make a list of 10 '*' but I couldn't return a list of 10 *. Although, after a while I discovered list comprehensions which helped return the list of 10.
 - __Loop 2 and 3__ I was able to understand the use of range() function and apply it to the other loops
