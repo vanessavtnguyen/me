@@ -166,7 +166,6 @@ def diarist():
     data = open(LOCAL + "/Trispokedovetiles(laser).gcode").read()
     Laser_number = data.count("M10 P1")
     
-    #Write it to file
     mode = "w"  # from the docs
     laser = open("/lasers.pew", mode)
     laser.write(str(Laser_number))
