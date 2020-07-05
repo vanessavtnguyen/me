@@ -63,7 +63,7 @@ def not_number_rejector(message):
         return message
     else:
         return "Try Again"
-    
+        
 def super_asker(low, high):
     """Robust asking function.
 
