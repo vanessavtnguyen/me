@@ -1,20 +1,12 @@
 TODO: Reflect on what you learned this week and what is still unclear.
 # Lectures 
+- Data Project 
 - 
 # Refactoring 
+- Refactoring involves simplifying codes whilst still making sense
+- In the exercises I struggled with the wordy pyramid, I knew it had to be simplified using the word generator but I could not get the code to work 
+- Solution: Yet to be found
 
 # Recursion 
-
-    triangle = {"base": 3, "height": 4}
-    triangle["hypotenuse"] = triangle["base"] ** 2 + triangle["height"] ** 2
-    print("area = " + str((triangle["base"] * triangle["height"]) / 2))
-    print("side lengths are:")
-    print("base: {}".format(triangle["base"]))
-    print("height: {}".format(triangle["height"]))
-    print("hypotenuse: {}".format(triangle["hypotenuse"]))
-
-    another_hyp = 5 ** 2 + 6 ** 2
-    print(another_hyp)
-
-    yet_another_hyp = 40 ** 2 + 30 ** 2
-    print(yet_another_hyp)
+- Recursion is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem
+ 
