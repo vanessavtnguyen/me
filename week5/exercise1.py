@@ -187,10 +187,10 @@ def triangle_master(base, height, return_diagram=False, return_dictionary=False)
 def wordy_pyramid():
 
     pyramid_list = []
-    lengths=[3, 5, 7, 9, 11, 13, 15, 17, 19, 20, 18, 16, 14, 12, 10, 8, 6, 4]
-    pyramid_list.extend(list_of_words_with_lengths(lengths))
-    return pyramid_list
+    word_length = [3, 5, 7, 9, 11, 13, 15, 17, 19, 20, 18, 16, 14, 12, 10, 8, 6, 4]
+    pyramid_list.extend(list_of_words_with_lengths(word_length))
 
+    return pyramid_list
 
 def get_a_word_of_length_n(length):
     
