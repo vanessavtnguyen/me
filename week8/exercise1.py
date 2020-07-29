@@ -177,14 +177,14 @@ def make_filler_text_dictionary():
     """
 
     import requests
-
+    
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length}"
     wd = {}
-    for i in range(3,8):
+    for i in range(3, 8):
         wd[i] = []
-        url = url.format(length = i)
-        r = requests.get(url)
-        if r.status_code is 200:
+        api = url.format(length=i)
+        for j in range(3):
+            r = requests.get(api)
             wd[i].append(r.text)
     return wd
 
@@ -202,8 +202,12 @@ def random_filler_text(number_of_words=200):
     import random
 
     my_dict = make_filler_text_dictionary()
-
-    return " ".join(words)
+    random_words = []
+    for i in range(number_of_words):
+        word_length = random.randint(3,7)
+        word_chosen = random.randint(0,2)
+        random_words.append(my_dict[word_length][word_chosen])
+    return " ".join(random_words)
 
 
 def fast_filler(number_of_words=200):
@@ -225,7 +229,22 @@ def fast_filler(number_of_words=200):
 
     fname = "dict_racey.json"
 
-    return None
+    if os.path.isfile(fname):
+        with open(fname, "r") as inFile:
+            dictionary = json.load(inFile)
+    else:
+        dictionary = make_filler_text_dictionary()
+        with open(fname, "w") as outFile:
+            json.dump(dictionary, outFile)
+    
+    the_list = []
+
+    for i in range(number_of_words):
+        word_length = str(random.randint(3, 7))
+        word_index = random.randint(0, 2)
+        the_list.append(dictionary[word_length][word_index].capitalize())
+
+    return " ".join(the_list) + "."
 
 
 if __name__ == "__main__":
