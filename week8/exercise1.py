@@ -230,12 +230,17 @@ def fast_filler(number_of_words=200):
     fname = "dict_racey.json"
 
     if os.path.isfile(fname):
-        with open(fname, "r") as inFile:
-            dictionary = json.load(inFile)
+        print("loading from file")
     else:
-        dictionary = make_filler_text_dictionary()
-        with open(fname, "w") as outFile:
-            json.dump(dictionary, outFile)
+        dictt = make_filler_text_dictionary()
+        f = open(fname, "w")
+        abba = json.dumps(dictt)
+        f.write(abba)
+        f.close
+    
+    f=open(fname, "r")
+    content= f.read()
+    dictionary = json.loads(content)
     
     the_list = []
 
