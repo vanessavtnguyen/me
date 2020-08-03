@@ -217,7 +217,10 @@ def list_of_words_with_lengths(list_of_lengths):
         word_list = word_list.append(r.text)
     return word_list
 
-
 if __name__ == "__main__":
     do_bunch_of_bad_things()
-    wordy_pyramid("a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5")
+    countdown("We're about to start", 9, 1, "we finished, wheeeee!")
+    triangle_master(3, 5)
+    pyramid = wordy_pyramid()
+    for word in pyramid:
+        print(word)
